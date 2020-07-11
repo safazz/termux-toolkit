@@ -1,0 +1,7 @@
+#!/bin/bash
+
+apt install git python2 python nano curl openssl-tool tor -y
+pip2 install requests mechanize bs4
+pip install requests mechanize bs4
+
+

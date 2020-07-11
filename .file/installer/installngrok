@@ -1,0 +1,20 @@
+#!/bin/bash
+m="\033[1;31m"
+p="\033[1;37m"
+k="\033[1;33m"
+h="\033[1;32m"
+c="\033[1;36m"
+grs="\033[4m"
+pe="\033[00m"
+ce="\033[0;36m"
+echo -e "${c}[+] ${pe}Downloading ngrok"
+echo -e "${c}[+] ${pe}Please wait"
+cd;wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip;unzip ngrok-stable-linux-arm.zip &> /dev/null;chmod ngrok
+echo -e "${c}[+] ${pe}Please take your authtoken in https://ngrok.com"
+echo -e "${c}[+] ${pe}Login or register, and copy your authtoken"
+echo -e "${c}[+] ${pe}Tryingin open your browser"
+xdg-open https://ngrok.com/
+printf "${k}[+] ${pe}Authtoken: ${ce}"; read token
+./ngrok authtoken $token
+mv ngrok $HOME;mv ngrok ../usr/bin
+cd $HOME/rm -rf ngrok-stable-linux-arm.zip
